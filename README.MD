@@ -57,9 +57,22 @@ php bin/console doctrine:fixtures:load
 
 ## RUN
 
+1. Execute composer && yarn
+
 ```bash
+composer install
+yarn install
+yarn build
+```
+
+2. Config docker
+
+```bash
+cp ./.env.nginx ./.env.nginx.local
 docker-compose up -d
 ```
+
+3. Execute db update && migration
 
 Migrations and fixtures must be executed later
 
@@ -67,3 +80,4 @@ Migrations and fixtures must be executed later
 docker exec -u root -it `docker ps | grep -i symfony_test_php_ | awk '{print $1}'`  php bin/console doctrine:migrations:migrate --no-interaction
 docker exec -u root -it `docker ps | grep -i symfony_test_php_ | awk '{print $1}'`  php bin/console doctrine:fixtures:load --no-interaction
 ```
+4. Open http://localhost
