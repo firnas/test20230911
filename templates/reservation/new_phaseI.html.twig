@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+<div class="col-8 text-justify">
+
+    <h3>{{ 'reservation.select.date' | trans }}</h3>
+
+    {{ include('trip/_form.html.twig') }}
+
+    <a href="{{ path('app_index') }}">back to readme</a>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Driver index{% endblock %}
+
+{% block body %}
+    <div class="col-8 text-center">
+
+
+    <h1>Driver index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>License</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for driver in drivers %}
+            <tr>
+                <td>{{ driver.id }}</td>
+                <td>{{ driver.Name }}</td>
+                <td>{{ driver.Surname }}</td>
+                <td>{{ driver.License }}</td>
+                <td>
+                    <a href="{{ path('app_driver_show', {'id': driver.id}) }}">show</a>
+                    <a href="{{ path('app_driver_edit', {'id': driver.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_driver_new') }}">Create new</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Trip{% endblock %}
+
+{% block body %}
+<div class="col-8 text-center">
+
+<h1>Create new Trip</h1>
+
+    {{ include('trip/_form.html.twig') }}
+
+    <a href="{{ path('app_index') }}">back to readme</a>
+</div>
+{% endblock %}

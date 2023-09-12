@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Driver{% endblock %}
+
+{% block body %}
+<div class="col-8 text-center">
+
+<h1>Create new Driver</h1>
+
+    {{ include('driver/_form.html.twig') }}
+
+    <a href="{{ path('app_driver_index') }}">back to readme</a>
+</div>
+
+{% endblock %}
